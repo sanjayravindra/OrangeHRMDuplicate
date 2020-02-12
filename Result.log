@@ -1,0 +1,76 @@
+2020-02-11 16:37:15 INFO  Employee:27 - Browser Opened
+2020-02-11 16:37:15 INFO  Employee:33 - Login Page
+2020-02-11 16:37:20 INFO  Employee:39 - Credentials entered
+2020-02-11 16:37:25 INFO  Employee:41 - User login to the application
+2020-02-11 16:37:26 INFO  Employee:43 - Dashboard
+2020-02-11 16:37:28 INFO  Employee:51 - PIM Module page
+2020-02-11 16:37:38 INFO  Employee:74 - Add Employee page
+2020-02-11 16:37:46 INFO  Employee:90 - Personal Details page
+2020-02-11 16:37:48 INFO  Employee:74 - Add Employee page
+2020-02-11 16:37:53 INFO  Employee:90 - Personal Details page
+2020-02-11 16:37:55 INFO  Employee:74 - Add Employee page
+2020-02-11 16:38:00 INFO  Employee:90 - Personal Details page
+2020-02-11 16:38:02 INFO  Employee:74 - Add Employee page
+2020-02-11 16:38:06 INFO  Employee:90 - Personal Details page
+2020-02-11 16:38:08 INFO  Employee:254 - User logout from the application
+2020-02-11 16:38:08 INFO  Employee:33 - Login Page
+2020-02-11 16:38:09 INFO  Employee:39 - Credentials entered
+2020-02-11 16:38:10 INFO  Employee:41 - User login to the application
+2020-02-11 16:38:11 INFO  Employee:43 - Dashboard
+2020-02-11 16:38:12 INFO  Employee:51 - PIM Module page
+2020-02-11 16:38:14 INFO  Employee:74 - Add Employee page
+2020-02-11 16:38:18 INFO  Employee:90 - Personal Details page
+2020-02-11 16:38:19 INFO  Employee:130 - textbox are enable to edit
+2020-02-11 16:38:21 INFO  Employee:158 - Personal Details are entered
+2020-02-11 16:38:24 INFO  Employee:173 - Successfully Saved
+
+2020-02-11 16:38:26 INFO  Employee:74 - Add Employee page
+2020-02-11 16:38:31 INFO  Employee:90 - Personal Details page
+2020-02-11 16:38:32 INFO  Employee:130 - textbox are enable to edit
+2020-02-11 16:38:34 INFO  Employee:158 - Personal Details are entered
+2020-02-11 16:38:37 INFO  Employee:173 - Successfully Saved
+
+2020-02-11 16:38:39 INFO  Employee:74 - Add Employee page
+2020-02-11 16:38:43 INFO  Employee:90 - Personal Details page
+2020-02-11 16:38:44 INFO  Employee:130 - textbox are enable to edit
+2020-02-11 16:38:45 INFO  Employee:158 - Personal Details are entered
+2020-02-11 16:38:56 INFO  Employee:180 - failed
+2020-02-11 16:38:58 INFO  Employee:74 - Add Employee page
+2020-02-11 16:39:03 INFO  Employee:90 - Personal Details page
+2020-02-11 16:39:04 INFO  Employee:130 - textbox are enable to edit
+2020-02-11 16:39:06 INFO  Employee:158 - Personal Details are entered
+2020-02-11 16:39:09 INFO  Employee:173 - Successfully Saved
+
+2020-02-11 16:39:11 INFO  Employee:254 - User logout from the application
+2020-02-11 16:39:11 INFO  Employee:33 - Login Page
+2020-02-11 16:39:12 INFO  Employee:39 - Credentials entered
+2020-02-11 16:39:13 INFO  Employee:41 - User login to the application
+2020-02-11 16:39:13 INFO  Employee:43 - Dashboard
+2020-02-11 16:39:16 INFO  Employee:210 - Redirect to search page
+2020-02-11 16:39:18 INFO  Employee:220 - Employee found
+2020-02-11 16:39:18 INFO  Employee:231 - Redirect to personal detials page
+2020-02-11 16:39:18 INFO  Employee:130 - textbox are enable to edit
+2020-02-11 16:39:20 INFO  Employee:158 - Personal Details are entered
+2020-02-11 16:39:31 INFO  Employee:180 - failed
+2020-02-11 16:39:34 INFO  Employee:210 - Redirect to search page
+2020-02-11 16:39:36 INFO  Employee:220 - Employee found
+2020-02-11 16:39:37 INFO  Employee:231 - Redirect to personal detials page
+2020-02-11 16:39:37 INFO  Employee:130 - textbox are enable to edit
+2020-02-11 16:39:39 INFO  Employee:158 - Personal Details are entered
+2020-02-11 16:39:42 INFO  Employee:173 - Successfully Saved
+
+2020-02-11 16:39:49 INFO  Employee:210 - Redirect to search page
+2020-02-11 16:39:51 INFO  Employee:220 - Employee found
+2020-02-11 16:39:51 INFO  Employee:231 - Redirect to personal detials page
+2020-02-11 16:39:51 INFO  Employee:130 - textbox are enable to edit
+2020-02-11 16:39:53 INFO  Employee:158 - Personal Details are entered
+2020-02-11 16:39:56 INFO  Employee:173 - Successfully Saved
+
+2020-02-11 16:40:01 INFO  Employee:210 - Redirect to search page
+2020-02-11 16:40:03 INFO  Employee:220 - Employee found
+2020-02-11 16:40:03 INFO  Employee:231 - Redirect to personal detials page
+2020-02-11 16:40:03 INFO  Employee:130 - textbox are enable to edit
+2020-02-11 16:40:05 INFO  Employee:158 - Personal Details are entered
+2020-02-11 16:40:07 INFO  Employee:173 - Successfully Saved
+
+2020-02-11 16:40:08 INFO  Employee:239 - Database validation started
