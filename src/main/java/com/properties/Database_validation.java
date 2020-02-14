@@ -14,28 +14,21 @@ public class Database_validation extends Property
 	static Connection con = null;
     private static Statement stmt=null;
     public static String DB_URL = "jdbc:mysql://localhost:3306/orangehrm_mysql";   
-    public static String DB_USER = "root";
-    public static String DB_PASSWORD = "root";
     public static String query = "select  employee_id,emp_firstname,emp_lastname,emp_birthday,emp_gender,emp_marital_status,nation_code from hs_hr_employee order by employee_id asc ;";
     public static String rowcount="SELECT COUNT(*) AS rowcount FROM hs_hr_employee;";
     public static int rownum;
     public static int colnum;
-    SoftAssert s = new SoftAssert();
-    
-    
-    
-    
+   
+    	SoftAssert s = new SoftAssert();
+       
     public void test(String sheetname) throws Throwable
     {
     	String dbClass = "com.mysql.cj.jdbc.Driver";
 
         Class.forName(dbClass).newInstance();
 
-        Connection con = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
-
-
-        
-        
+        Connection con = DriverManager.getConnection(DB_URL, super.getProperty("userid"), super.decode(super.getProperty("pass")));
+     
         List<String> data = new ArrayList<String>();
         stmt = con.createStatement();
         ResultSet rs1 = stmt.executeQuery(query);
@@ -94,14 +87,12 @@ public class Database_validation extends Property
     		   s.assertEquals(super.getcelldata(sheetname, "Nation code", i), data.get(m+6));
     		  
     		   if(result.equalsIgnoreCase(excel))
-    	    	{
-    			
+    	    	{    			
     			   super.writeExcel(sheetname, "DB Validation", i, "Pass");
     	    	}
     		   else
-    		   {
-    			
-    			   super.writeExcel(sheetname, "DB Validation", i, "Fail");
+    		   {   			
+    			   super.writeExcel(sheetname, "DB Validation", i, "Fail");   			
     		   }
     		   
     		   ++m;++m;++m;++m;++m;++m;++m;
@@ -117,5 +108,4 @@ public class Database_validation extends Property
            }
        s.assertAll();
     }
-    
 }

@@ -14,7 +14,6 @@ import com.properties.Property;
 
 public class Employee extends Property
 {
-
 	static Logger log = Logger.getLogger(Employee.class);	
 	static WebDriver driver;
 	
@@ -42,6 +41,7 @@ public class Employee extends Property
 		super.screenshot(driver, "Dashboard");
 		log.info("Dashboard");
 	}
+
 	
 	public void addEmployee(String sheetname,String edit,String search) throws Throwable
 	{		
@@ -52,7 +52,7 @@ public class Employee extends Property
 		super.screenshot(driver, "PIM");
 	
 		
-		Thread.sleep(1000);
+		Thread.sleep(500);
 		for (int j = 1; j <=super.getrow(sheetname) ; j++) 
 		{
 
@@ -73,7 +73,7 @@ public class Employee extends Property
 			
 		log.info(addemp+" page");
 		super.screenshot(driver, addemp+" page");
-		Thread.sleep(1000);
+		Thread.sleep(500);
 		driver.findElement(By.id("firstName")).sendKeys(super.getcelldata(sheetname, "Emp_firstname", i));
 		driver.findElement(By.id("lastName")).sendKeys(super.getcelldata(sheetname, "Emp_lastname", i));
 		 WebElement emp_id = driver.findElement(By.id("employeeId"));
@@ -81,29 +81,42 @@ public class Employee extends Property
 		emp_id.sendKeys(super.getcelldata(sheetname, "Emp_ID", i));
 		driver.findElement(By.id("photofile")).sendKeys("C:\\Users\\sanjay.ravindra\\Pictures\\Employees\\Emp_"+i+".jpg");	
 		driver.findElement(By.id("btnSave")).click();
-		
-Thread.sleep(1000);
+		try
+		{
+			driver.findElement(By.xpath("//div[@class='message warning fadable']"));
+
+			log.fatal("failed employee already exists");
+			super.screenshot(driver, "Failed employee already exists- Employee"+i);
+			super.writeExcel(sheetname, "Result", i, "Fail");
+		}
+		catch(NoSuchElementException exc)
+		{
+			log.info("Redirect to personal details page");
+			
+		}
 	try
 	{
-		String personal = driver.findElement(By.xpath("//h1[contains(text(),'Personal Details')]")).getText();
+		Thread.sleep(200);
+		driver.findElement(By.xpath("//h1[contains(text(),'Personal Details')]"));
 		super.screenshot(driver, "Employee"+i);
-		log.info(personal+" page");
-		Thread.sleep(500);
+		log.info("Employee added page");
+		Thread.sleep(200);
 		super.writeExcel(sheetname, "Result", i, "Pass");
 		
 	}
 
 		catch(NoSuchElementException ex)
 		{
-			log.info("Personal Details page failed");
+			log.fatal("Adding Employee failed");
 			super.screenshot(driver, "Personal Details page-Employee "+ i + " failed");
 			super.writeExcel(sheetname, "Result", i, "Fail");
 			
 		}
+		
 		}
 		catch(NoSuchElementException a)
 		{
-			log.info("Add Employee page failed");
+			log.fatal("Add Employee page failed");
 			super.screenshot(driver, "Add Employee page-Employee "+ i + " failed");
 			super.writeExcel(sheetname, "Result", i, "Fail");
 		}
@@ -114,7 +127,7 @@ Thread.sleep(1000);
 		}
 	
 	break;	
-			}			
+		}			
 		}
 	}
 		
@@ -158,7 +171,7 @@ Thread.sleep(1000);
 			log.info("Personal Details are entered");
 			driver.findElement(By.id("btnSave")).click();
 
-			Thread.sleep(1000);
+			Thread.sleep(500);
 			try
 			{
 	
@@ -172,18 +185,18 @@ Thread.sleep(1000);
 
 			log.info(text);
 			super.writeExcel(sheetname, "Result", i, "Pass");
-			Thread.sleep(500);
+			Thread.sleep(200);
 			
 			}
 			catch(NoSuchElementException e)
 			{
-				log.info("failed");
+				log.fatal("failed");
 				super.screenshot(driver, "Failed to add personal Details- Employee"+i);
 				super.writeExcel(sheetname, "Result", i, "Fail");
 			}
 			
 			
-			Thread.sleep(500);
+			Thread.sleep(200);
 			}
 	
 	
@@ -194,7 +207,7 @@ Thread.sleep(1000);
 		{
 			for(int i=j;i<=j;)
 			{
-				Thread.sleep(1000);
+				Thread.sleep(500);
 				if(flag.equalsIgnoreCase(super.getcelldata(sheetname,"search",j)))
 				{
 		driver.findElement(By.id("menu_pim_viewPimModule")).click();
@@ -222,7 +235,7 @@ Thread.sleep(1000);
 		}
 		catch(Exception exc)
 		{
-			log.info("No Record found");
+			log.fatal("No Record found");
 			super.screenshot(driver, "No Records");
 			super.writeExcel(sheetname, "Result", i, "Fail");
 				
@@ -236,10 +249,7 @@ Thread.sleep(1000);
 		}
 		
 		
-		log.info("Database validation started");
-		Database_validation data = new Database_validation();
-		data.test(sheetname);
-		log.info("Database validation ended");
+		
 	}
 		
 	
@@ -251,9 +261,24 @@ Thread.sleep(1000);
 	log.info("User logout from the application");
 	
 	}
+
+	
 	public void closeBrowser()
 	{
 	driver.close();
 	log.info("Browser closed");
+	}
+
+	
+	public void Db_val(String sheetname) throws Throwable
+	{
+		log.info("Database validation started");
+
+		Database_validation data = new Database_validation();
+		data.test(sheetname);
+		
+
+		log.info("Database validation ended");
+	
 	}
 }

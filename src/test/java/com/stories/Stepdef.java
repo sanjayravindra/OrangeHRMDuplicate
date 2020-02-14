@@ -74,4 +74,11 @@ public class Stepdef extends Employee
 		super.logout();
 		super.closeBrowser();
 	}
+	@Then("user validate in database")
+
+	public void thenUserValidateInDatabase() throws Throwable 
+	{
+		super.Db_val("OrangeHRM");
+
+	}
 }

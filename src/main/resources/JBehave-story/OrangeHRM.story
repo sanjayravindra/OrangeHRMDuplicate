@@ -21,3 +21,4 @@ Scenario: Verify the user is able to search an employee and edit employee
 Given User should able to login for the application
 When User should able to search and edit employee details
 Then User should able to logout from the application
+And user validate in database

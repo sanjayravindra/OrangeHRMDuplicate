@@ -2,6 +2,7 @@ package com.properties;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Properties;
@@ -35,7 +36,7 @@ public class Property
 	}
 	
 
-public void screenshot(WebDriver driver, String name) throws Throwable
+public void screenshot(WebDriver driver, String name) throws IOException
 {
 TakesScreenshot t = (TakesScreenshot)driver;
 File source = t.getScreenshotAs(OutputType.FILE);
@@ -52,7 +53,7 @@ public static XSSFWorkbook workbook = null;
 public static XSSFRow row = null;
 public static XSSFCell cell = null;
 
-public int getrow(String sheetname) throws Throwable
+public int getrow(String sheetname) throws IOException
 {
 	 fis = new FileInputStream(file);
 	  workbook = new XSSFWorkbook(fis);
@@ -63,35 +64,35 @@ public int getrow(String sheetname) throws Throwable
 }
 
 
-public void writeExcel(String sheetname, String colnam, int rownum, String value) throws Throwable
+public void writeExcel(String sheetname, String colnam, int rownum, String value) throws IOException 
 {
 	fis =new FileInputStream(file);
 	FileOutputStream fout = null;
     XSSFWorkbook book = new XSSFWorkbook(fis);
     XSSFSheet sheet = book.getSheet(sheetname);
-    XSSFRow row = null;
-    XSSFCell cell = null;
+    XSSFRow rowValue = null;
+    XSSFCell cellValue = null;
     int colnum = -1;
-    row = sheet.getRow(0);
-    for(int i=0 ; i<row.getLastCellNum(); i++)
+    rowValue = sheet.getRow(0);
+    for(int i=0 ; i<rowValue.getLastCellNum(); i++)
 	{
-		if(row.getCell(i).getStringCellValue().trim().equals(colnam))
+		if(rowValue.getCell(i).getStringCellValue().trim().equals(colnam))
 		{
 			colnum = i;
 		}
 	}
-    row = sheet.getRow(rownum);
-    if(row==null)
+    rowValue = sheet.getRow(rownum);
+    if(rowValue==null)
     {
-    	row = sheet.createRow(rownum);
+    	rowValue = sheet.createRow(rownum);
     }
     
-    cell = row.getCell(colnum);
-    if(cell==null)
+    cellValue = rowValue.getCell(colnum);
+    if(cellValue==null)
     {
-    	cell = row.createCell(colnum);
+    	cellValue = rowValue.createCell(colnum);
     }
-cell.setCellValue(value);
+    cellValue.setCellValue(value);
 
 fout = new FileOutputStream(file);
 	book.write(fout);
@@ -134,7 +135,7 @@ else if(cell.getCellType()==CellType.NUMERIC)
 	catch(NullPointerException e)
 	{
 	
-	System.out.println("data not found");	
+	return "data not found";	
 	}
 	return " ";
 }
