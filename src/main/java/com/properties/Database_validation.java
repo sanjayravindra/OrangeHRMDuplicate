@@ -7,7 +7,9 @@ import java.sql.ResultSetMetaData;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+
 import org.testng.asserts.SoftAssert;
+
 
 public class Database_validation extends Property
 {
@@ -66,24 +68,15 @@ public class Database_validation extends Property
     		   s.assertEquals(super.getcelldata(sheetname, "Emp_ID", i), data.get(m));
 
     		   s.assertEquals(super.getcelldata(sheetname, "Emp_firstname", i), data.get(m+1));
- 
-    	
+     	
     		   s.assertEquals(super.getcelldata(sheetname, "Emp_lastname", i), data.get(m+2));
    
-  
-    	
     		   s.assertEquals(super.getcelldata(sheetname, "DOB", i), data.get(m+3));
-    		 
-  
-    	
-    		   s.assertEquals(super.getcelldata(sheetname, "Gender code", i), data.get(m+4));
-    		 
-
+    		 	
+    		   s.assertEquals(super.getcelldata(sheetname, "Gender code", i), data.get(m+4));    		 
   
     		   s.assertEquals(super.getcelldata(sheetname, "Marital Status", i), data.get(m+5));
-    		
-  
-    
+    		    
     		   s.assertEquals(super.getcelldata(sheetname, "Nation code", i), data.get(m+6));
     		  
     		   if(result.equalsIgnoreCase(excel))
