@@ -59,7 +59,7 @@ public class Database_validation extends Property
     	   {  
     		   String result = data.get(m)+data.get(m+1)+data.get(m+2)+data.get(m+3)+data.get(m+4)+data.get(m+5)+data.get(m+6);
 
-    	
+
     	String excel =super.getcelldata(sheetname, "Emp_ID", i)+super.getcelldata(sheetname, "Emp_firstname", i)+super.getcelldata(sheetname, "Emp_lastname", i)+
     			super.getcelldata(sheetname, "DOB", i)+super.getcelldata(sheetname, "Gender code", i)+
     			super.getcelldata(sheetname, "Marital Status", i)+super.getcelldata(sheetname, "Nation code", i);
